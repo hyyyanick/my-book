@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Dashboard msg="This is my first vue app"/>
+    <Dashboard :msg="title"/>
   </div>
 </template>
 
@@ -9,6 +9,14 @@ import Dashboard from './components/Dashboard.vue'
 
 export default {
   name: 'app',
+  data(){
+    return {
+      title: ""
+    }
+  },
+  mounted() {
+    this.title = "This is a question form !"
+  },
   components: {
     Dashboard
   }

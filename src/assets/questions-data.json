@@ -1,17 +1,26 @@
 [
     {
         "id": 1,
-        "name": "Camille",
-        "book": "Book Title"
+        "question": "Q1 Quels sont les fruits que vous préférez",
+        "choices": [
+            "Banane", "Mangue", "Pomme"
+        ],
+        "response": []
     },
     {
         "id": 2,
-        "name": "Guillaume",
-        "book": "Book Title2"
+        "question": "Q2 Quels sont les livres que vous préférez",
+        "choices": [
+            "La 5e Vague", "Sapiens", "Homos Deus"
+        ],
+        "response": []
     },
     {
         "id": 3,
-        "name": "Rick Yancey",
-        "book": "Book Title3"
+        "question": "Q3 Quels sont les pays dans lesquels vous avez voyagés",
+        "choices": [
+            "La France", "La Chine", "L'Allemagne"
+        ],
+        "response": []
     }
 ]

@@ -2,13 +2,13 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
    
-    <BookList :questions="Questions" />
+    <Questions :questions="questionsData" />
   </div>
 </template>
 
 <script>
-import BookList from './BookList.vue';
-import Questions from '../assets/questions-data.json';
+import Questions from './Questions.vue';
+import questionsData from '../assets/questions-data.json';
 
 export default {
   name: 'Dashboard',
@@ -17,11 +17,11 @@ export default {
   },
   data(){
     return {
-      Questions
+      questionsData
     }
   },
   components: {
-    BookList
+    Questions
   }
 }
 </script>
