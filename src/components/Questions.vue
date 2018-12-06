@@ -13,16 +13,9 @@
 </template>
 
 <script>
-    
     export default {
         name: "Questions",
         props: ["questions"]
     }
 </script>
-
-<style lang="css">
-    .book-title{
-        font-style: italic;
-    }
-</style>
 
