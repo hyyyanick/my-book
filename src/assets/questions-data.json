@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Camille",
+        "book": "Book Title"
+    },
+    {
+        "id": 2,
+        "name": "Guillaume",
+        "book": "Book Title2"
+    },
+    {
+        "id": 3,
+        "name": "Rick Yancey",
+        "book": "Book Title3"
+    }
+]
