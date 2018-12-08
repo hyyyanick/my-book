@@ -1,34 +1,31 @@
 <template>
   <div id="app">
-    <Dashboard :msg="title"/>
+    <h3>{{title}}</h3>
+
+    <router-view></router-view>
   </div>
-</template>
+</template>  
 
 <script>
-import Dashboard from './components/Dashboard.vue'
-
 export default {
-  name: 'app',
-  data(){
+  name: "app",
+  data() {
     return {
       title: ""
-    }
+    };
   },
   mounted() {
-    this.title = "This is a question form !"
-  },
-  components: {
-    Dashboard
+    this.title = "This is a question form !";
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   color: #2c3e50;
   margin-top: 60px;
 }
