@@ -1,27 +1,19 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-   
-    <Questions :questions="questionsData" />
+
+    <router-link to="/question-list">Start questions</router-link>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Questions from './Questions.vue';
-import questionsData from '../assets/questions-data.json';
 
 export default {
   name: 'Dashboard',
   props: {
     msg: String
-  },
-  data(){
-    return {
-      questionsData
-    }
-  },
-  components: {
-    Questions
   }
 }
 </script>

@@ -7,15 +7,38 @@
         <label :for="choice">{{choice}}</label>
       </div>
 
-      <h4>{{item.response}}</h4>
+      <button @click="answerQuestion(item)">Answser</button>
     </li>
+
+    <router-view></router-view>
   </ol>
 </template>
 
 <script>
+import { mapGetters, mapState } from "vuex";
 export default {
   name: "Questions",
-  props: ["questions"]
+  //   computed: mapGetters({
+  //     questions: "getQuestionsList"
+  //   })
+
+  // computed: {
+  //   ...mapGetters({
+  //     questions: "getQuestionsList"
+  //   })
+  // },
+  computed: {
+    ...mapState(["questions"])
+  },
+  mounted() {
+    this.$store.dispatch("getQuestionsList");
+  },
+
+  methods: {
+    answerQuestion(item) {
+      this.$store.commit("anwserQuestion", item);
+    }
+  }
 };
 </script>
 
