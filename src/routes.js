@@ -2,10 +2,12 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Dashboard from "./components/Dashboard";
 import Questions from "./components/Questions";
+import QuestionDetail from "./components/QuestionDetail";
 
 const routes = [
     { path: "/", component: Dashboard },
-    { path: "/question-list", component: Questions }
+    { path: "/question-list", component: Questions },
+    { path: "/question-detail/:id", name: 'question-detail', component: QuestionDetail }
 ];
 
 Vue.use(VueRouter);

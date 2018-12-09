@@ -8,6 +8,7 @@ app.use(express.json());
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
   next();
 });
 const list = [
@@ -64,7 +65,6 @@ app.post('/items', (req, res) => {
 
 app.put('/items/:id', (req, res) => {
   const item = list.find(item => item.id === req.params.id);
-
   if (item) {
     Object.assign(item, req.body)
     res.sendStatus(200);
@@ -74,6 +74,7 @@ app.put('/items/:id', (req, res) => {
 });
 
 app.delete('/items/:id', (req, res) => {
+  
   const index = list.findIndex(item => item.id === req.params.id);
 
   if (index >= 0) {

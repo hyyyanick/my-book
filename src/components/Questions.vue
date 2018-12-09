@@ -1,15 +1,12 @@
 <template>
   <ol>
     <li v-for="item in questions" :key="item.id">
-      <h4>{{item.question}}</h4>
-      <div v-for="(choice, index) in item.choices" :key="index">
-        <input type="checkbox" :id="choice" :value="choice" v-model="item.response">
-        <label :for="choice">{{choice}}</label>
-      </div>
-
-      <button @click="answerQuestion(item)">Answser</button>
+      <h4>
+        <router-link :to="{name: 'question-detail', params: {id:item.id}}">{{item.question}}</router-link>
+      </h4>
+      <p v-if="item.response.length>0">My answser is: {{item.response}}</p>
     </li>
-
+    <button @click="addQuestion()">Add a question</button>
     <router-view></router-view>
   </ol>
 </template>
@@ -32,12 +29,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getQuestionsList");
-  },
-
-  methods: {
-    answerQuestion(item) {
-      this.$store.commit("anwserQuestion", item);
-    }
   }
 };
 </script>
