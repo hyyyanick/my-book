@@ -8,7 +8,10 @@
 <script>
 import Questions from "./Questions.vue";
 export default {
-  name: "Dashboard"
+  name: "Dashboard",
+  components: {
+    "Questions": Questions
+  }
 };
 </script>
 
